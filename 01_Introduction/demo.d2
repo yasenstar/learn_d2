@@ -1,0 +1,53 @@
+vars: {
+    d2-config: {
+        theme-id: 300
+        layout-engine: elk
+        pad: 0
+    }
+}
+
+user: {
+    shape: person
+    width: 130
+}
+
+network: {
+    CELL TOWER: {
+        satellites: {
+            shape: stored_data
+            style.multiple: true
+        }
+        transmitter
+        satellites -> transmitter: SEND
+        satellites -> transmitter: SEND
+        satellites -> transmitter: SEND
+    }
+    ONLINE PORTAL: {
+        UI: {
+            shape: hexagon
+        }
+    }
+    DATA PROCESSOR: {
+        storage: {
+            shape: cylinder
+            style.multiple: true
+        }
+    }
+    cell tower.transmitter -> DATA PROCESSOR.storage: phone log
+}
+
+user -> network.cell tower: make call
+user -> network.online portal.ui: access {
+    style.stroke-dash: 3
+}
+
+
+api server -> network.online portal.ui: display
+api server -> logs: perssist
+
+logs: {
+    shape: page
+    style.multiple: true
+}
+
+network.data processor -> api server
