@@ -1,4 +1,4 @@
-# Learn D2 Language
+# Learn D2 Language - Declarative Diagramming
 
 Learn, practice and sharing experience on D2 (the Declarative Diagramming) language
 
