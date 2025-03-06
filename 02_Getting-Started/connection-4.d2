@@ -1,0 +1,17 @@
+Database.shape: cylinder
+S3
+
+Database -> S3: backup
+Database -> S3: master
+Database -> S3: backup
+Database -> S3: master
+
+High Mem Instance -> EC2: Hosted By
+High CPU Instance -> EC2: Hosted By
+
+High1 -> Server <- High2 <- Network -> High1 <- Network
+
+Stage One -> Stage Two -> Stage Three -> Stage Four -> Stage One: repeat
+
+Stage 1 -> Stage 2 -> Stage 3 -> Stage 4
+Stage 4 -> Stage 1: repeat
