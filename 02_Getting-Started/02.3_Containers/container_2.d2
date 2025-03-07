@@ -1,0 +1,12 @@
+clouds: Public Cloud Platform {
+    gcloud: Google Cloud {
+        auth -> db
+    }
+    aws: AWS Cloud {
+        load_balancer -> api -> db
+    }
+    gcloud -> aws
+    gcloud.db -> aws.db: data replica
+}
+
+clouds.gcloud.db -> clouds.aws.db: data replica
