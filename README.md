@@ -6,7 +6,7 @@ Base on [D2 Tour](https://d2lang.com/tour/), learn step-by-step modeling skills 
 
 ![learn_d2](img/Learn_D2.png)
 
-The demo will be packaged into Udemy and later my YouTube channel, stay tunes.
+The demo will be packaged into [Udemy](https://www.udemy.com/course/learn-d2-diagramming/?referralCode=3C98DB7C2379CDBB0B94) and later my YouTube channel, stay tunes.
 
 ---
 Any questions, post in Discussion Board please.
