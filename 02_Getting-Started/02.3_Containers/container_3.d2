@@ -1,0 +1,17 @@
+clouds: Public Cloud Platform {
+    gcloud: Google Cloud {
+        auth -> db
+    }
+    aws: AWS Cloud {
+        load_balancer -> api -> db
+    }
+    gcloud -> aws
+}
+
+users.shape: person
+users.width: 400
+
+users -> clouds.gcloud.auth
+users -> clouds.aws.load_balancer
+
+ci.deploys -> clouds
