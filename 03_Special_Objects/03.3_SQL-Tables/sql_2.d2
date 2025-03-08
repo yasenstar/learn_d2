@@ -1,0 +1,16 @@
+objects -> disks
+
+objects {
+    shape: sql_table
+    id: int {constraint: PK}
+    disk: int {constraint: FK}
+    json: jsonb {constraint: UNQ}
+    last_updated_by: string
+    last_updated_at: datatime
+}
+
+disks {
+    shape: sql_table
+    id: int {constraint: primary_key}
+    disks_id: int {constraint: unique}
+}
