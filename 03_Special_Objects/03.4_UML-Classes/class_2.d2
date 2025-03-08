@@ -1,0 +1,17 @@
+github: github.com/terrastruct/d2parser.git
+
+github -> D2 Parser
+
+D2 Parser {
+    shape: class
+
+    reader: io.RuneReader
+    readerPos: d2ast.Position
+    - lookahead: "[]rune"
+    \# lookaheadPos: d2ast.Position
+
+    peek(): (r rune, eof bool)
+    rewind()
+    commit()
+    \# peekn(n int): (s string, eof bool)
+}
