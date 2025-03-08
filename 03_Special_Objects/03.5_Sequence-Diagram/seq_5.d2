@@ -1,0 +1,9 @@
+shape: sequence_diagram
+alice -> bob: let's start
+alice.t1 -> bob
+alice.t1 -> bob.a
+alice.t2 -> bob.a
+alice.t2.b -> bob.a
+alice.t2.b.c <- bob.a
+alice.t2 <- bob.a
+alice <- bob: finished

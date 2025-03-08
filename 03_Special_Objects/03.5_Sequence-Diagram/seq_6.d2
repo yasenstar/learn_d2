@@ -1,0 +1,20 @@
+shape: sequence_diagram
+alice
+bob
+alice -> bob: hello
+shower thoughts {
+    alice -> bob
+    alice <-> bob
+    level 2 {
+        bob -> alice
+        level 3 {
+            style {
+                fill: yellow
+            }
+            alice -> bob
+        }
+    }
+}
+life advice {
+    bob -> alice
+}
