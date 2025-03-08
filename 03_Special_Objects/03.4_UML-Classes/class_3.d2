@@ -1,0 +1,166 @@
+DebitCard: Debit card {
+    shape: class
+    
+    cardNo
+    ownerBy
+
+    access()    
+}
+Bank {
+    shape: class
+
+    code
+    address
+
+    manags()
+    maintains()
+}
+Customer {
+    shape: class
+
+    name
+    address
+    dob # date of birth
+    owns()
+}
+ATMInfo: ATM info {
+    shape: class
+
+    location
+    manageBy
+
+    identifies()
+    transactions()
+}
+PinValidation: Pin validation transaction {
+    shape: class
+
+    oldPin
+    newPin
+
+    pinChange()
+}
+WidthdrawlTranaction: Withdrawl transaction {
+    shape: class
+
+    amount
+
+    Withdrawl()
+}
+TransferTransaction: Transfer transaction {
+    shape: class
+
+    account
+    accountNo
+}
+QueryTransaction: Query transaction {
+    shape: class
+
+    query
+    type
+
+    queryProcessing()
+}
+ATMTransaction: ATM transaction {
+    shape: class
+
+    transactionId
+    date: dateTime
+    type
+
+    modifies()
+}
+SavingAccount: Saving account {
+    shape: class
+
+    accountNo
+    balance
+
+    debit()
+    credit()
+}
+CurrentAccount: Current account {
+    shape: class
+
+    accountNo
+    balance
+
+    debit()
+    credit()
+}
+Account {
+    shape: class
+
+    type
+    owner
+}
+
+DebitCard -- Bank: manages {
+    source-arrowhead: 1..*
+    target-arrowhead: 1
+}
+
+Bank -- ATMInfo: maintains {
+    source-arrowhead: 1
+    target-arrowhead: 1
+}
+
+Bank -- Customer: +has {
+    source-arrowhead: 1
+    target-arrowhead: 1
+}
+
+DebitCard -- Customer: +owns {
+    source-arrowhead: 0..*
+    target-arrowhead: 1..*
+}
+
+DebitCard -- Account: +provides access to {
+    source-arrowhead: *
+    target-arrowhead: 1..*
+}
+
+Customer -- Account: owns {
+    source-arrowhead: 1..*
+    target-arrowhead: 1..*
+}
+
+ATMInfo -> ATMTransaction: +identifies {
+    source-arrowhead: 1
+    target-arrowhead: *
+}
+
+ATMTransaction -> Account: modified {
+    source-arrowhead: *
+    target-arrowhead: 1
+}
+
+CurrentAccount -> Account {
+    target-arrowhead.shape: triangle
+    target-arrowhead.style.filled: false
+}
+
+SavingAccount -> Account {
+    target-arrowhead.shape: triangle
+    target-arrowhead.style.filled: false
+}
+
+WidthdrawlTranaction -> Account {
+    target-arrowhead.shape: triangle
+    target-arrowhead.style.filled: false
+}
+
+QueryTransaction -> Account {
+    target-arrowhead.shape: triangle
+    target-arrowhead.style.filled: false
+}
+
+TransferTransaction -> Account {
+    target-arrowhead.shape: triangle
+    target-arrowhead.style.filled: false
+}
+
+PinValidation -> Account {
+    target-arrowhead.shape: triangle
+    target-arrowhead.style.filled: false
+}
