@@ -1,0 +1,21 @@
+vpc: VPC 1 10.1.0.0/16 {
+    icon: https://icons.terrastruct.com/aws%2FNetworking%20&%20Content%20Delivery%2FAmazon-VPC.svg
+    style: {
+        stroke: green
+        fill: green
+        font-color: green
+    }
+    az: Availability Zone A {
+        fw: Firewall Subnet A {
+            icon: https://icons.terrastruct.com/aws%2FNetworking%20&%20Content%20Delivery%2FAmazon-Route-53.svg
+            style: {
+                stroke: purple
+                font-color: purple
+                fill: "#e1d5e7"
+            }
+            ec2: EC2 Instance {
+                icon: https://icons.terrastruct.com/aws%2FCompute%2F_Instance%2FAmazon-EC2_C4-Instance_light-bg.svg
+            }
+        }
+    }
+}
