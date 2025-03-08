@@ -1,0 +1,14 @@
+cloud {
+    icon: https://icons.terrastruct.com/aws%2F_Group%20Icons%2FAWS-Cloud_light-bg.svg
+    blocks -> disks <- AWS S3 Vancouver
+    blocks {
+        shape: sql_table
+        id: int {constraint: PK}
+        disk: int {constraint: FK}
+        bolb
+    }
+    disks {
+        shape: sql_table
+        id: int {constraint: PK}
+    }
+}
