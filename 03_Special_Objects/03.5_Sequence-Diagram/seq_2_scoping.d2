@@ -1,0 +1,19 @@
+Office Chatter {
+    shape: sequence_diagram
+    alice: Alice
+    jack: Jacky
+    bob: Bobby
+    
+    alice -> bob: hello
+    awkward small talk: {
+        alice -> bob: uhm, hi
+        bob -> jack: hello
+        alice <- bob: oh, hello
+        icebreaker attempt {
+            alice -> jack: what did you have for lunch?
+        }
+        unfortunate otucome: {
+            jack -> bob: shall we go together?
+        }
+    }
+}
