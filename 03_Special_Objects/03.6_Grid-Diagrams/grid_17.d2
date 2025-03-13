@@ -1,0 +1,28 @@
+classes: {
+    invisible {
+        style.opacity: 0
+        label: a
+    }
+}
+
+grid-columns: 1
+
+us-east-1 {
+    grid-rows: 1
+    a
+    b
+    c
+    d
+    e
+}
+
+us-west-1 {
+    grid-rows: 1
+    pad1.class: invisible
+    pad2.class: invisible
+    pad3.class: invisible
+    pad4.class: invisible
+    a
+}
+
+us-east-1.e -> us-west-1.a
