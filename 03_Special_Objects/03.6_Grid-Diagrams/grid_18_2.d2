@@ -1,0 +1,97 @@
+classes {
+    kuber {
+        style {
+            fill: "white"
+            stroke-dash: 3
+            stroke: "#aeb5bd"
+            border-radius: 50
+        }
+    }
+    sys {
+        label: ""
+        style {
+            fill: "#AFBFDF"
+            stroke: "#aeb5bd"
+            border-radius: 40
+        }
+    }
+    node {
+        style {
+            fill: "#ebf3e6"
+            # border-radius: 8
+            stroke: "#aeb5bd"
+        }
+        grid-gap: 0
+    }
+    clust {
+        style {
+            fill: "#A7CC9E"
+            stroke: "#aeb5bd"
+        }
+    }
+    deploy {
+        style {
+            fill: "#FFE6d5"
+            stroke: "#aeb5bd"
+        }
+        grid-gap: 0
+    }
+    nextpod {
+        width: 200
+        icon: https://www.svgrepo.com/show/342062/next-js.svg
+        style: {
+            fill: "#ECECEC"
+            stroke: "#aeb5bd"
+            # border-radius: 4
+          }
+    }
+    flaskpod {
+        width: 200
+        icon: https://www.svgrepo.com/show/508915/flask.svg
+        style: {
+            fill: "#ECECEC"
+            stroke: "#aeb5bd"
+            # border-radius: 4
+          }
+    }
+}
+
+Kubernetes {
+    grid-columns: 2
+    class: kuber
+    system {
+        class: sys
+        grid-columns: 1
+        Backend Node {
+            class: node
+            grid-columns: 2
+            ClusterIP\nService 1 {
+                class: clust
+            }
+            Deployment 1 {
+                class: deploy
+                grid-columns: 1
+                NEXT POD 1
+                NEXT POD 2
+                NEXT POD 3
+            }
+        }
+        Frontend Node {
+            class: node
+            grid-columns: 2
+            ClusterIP\nService 2 {
+                class: clust
+            }
+            Deployment 2 {
+                class: deploy
+                grid-rows: 3
+                FLASK POD 1
+                FLASK POD 2
+                FLASK POD 3
+            }
+        }
+    }
+}
+
+kubernetes.system.backend node.deployment 1.next pod*.class: nextpod
+kubernetes.system.frontend node.deployment 2.flask pod*.class: flaskpod
